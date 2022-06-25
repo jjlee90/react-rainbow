@@ -8,12 +8,18 @@ export default function ColorForm(props) {
     e.preventDefault();
     // addColor, the function we just built, should be available within props.
     props.addColor(input);
+
+    setInput("");
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => setInput(e.target.value)} />
+        <input
+          value={input}
+          type="text"
+          onChange={(e) => setInput(e.target.value)}
+        />
 
         <input type="button" value="Submit!" />
       </form>
